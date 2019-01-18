@@ -7,9 +7,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.example.template</string>
+	<string>com.matthieuoger.template</string>
 	<key>CFBundleName</key>
-	<string>Example</string>
+	<string>MatthieuOger</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -27,10 +27,12 @@
 	<key>IATemplateHeaderHeight</key>
 	<integer>90</integer>
 	<key>IATemplateDescription</key>
-	<string>Example template.</string>
+	<string>iA Writer Template for matthieuoger.com.</string>
 	<key>IATemplateAuthor</key>
-	<string>Example</string>
+	<string>Matthieu Oger</string>
 	<key>IATemplateAuthorURL</key>
-	<string>https://example.com</string>
+	<string>https://matthieuoger.com/</string>
+  <key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2019 Matthieu Oger. All rights reserved.</string>
 </dict>
 </plist>
