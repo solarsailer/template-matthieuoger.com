@@ -10,9 +10,11 @@
     text-decoration: none;
     transition: color 0.2s ease-in;
   }
+
   a:hover {
     color: var(--color-accent);
   }
+
   a:focus,
   a:active {
     color: hsl(var(--hue-accent), 69%, 47%);
