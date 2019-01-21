@@ -3,3 +3,55 @@
 /* ---------------------------------------------------------- *\
  * Base.
 \* ---------------------------------------------------------- */
+
+/* Box-sizing. */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Typography. */
+
+html {
+  font: 62.5%/1.5 Rubik, Verdana, sans-serif;
+}
+
+body {
+  font-size: 1.8em;
+}
+
+pre,
+code {
+  font-family: 'Fira Mono', monospace !important;
+  line-height: 1.25 !important;
+}
+
+/* Full-viewport body. */
+
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Colors. */
+
+html {
+  color: var(--color-page-content);
+  background: var(--color-page-overscroll);
+}
+
+body {
+  background: var(--color-page-background);
+}
+
+::selection {
+  color: var(--color-selection-foreground);
+  background: var(--color-selection-background);
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------- *\
+ * Theme.
+\* ---------------------------------------------------------- */
+
+:root {
+  --hue-accent: 11;
+  --color-accent: hsl(var(--hue-accent), 78%, 53%);
+
+  --hue-twitter: 210;
+  --color-twitter: hsl(var(--hue-twitter), 95%, 64%);
+
+  --hue-tldr: 21;
+  --color-tldr: hsl(var(--hue-tldr), 81%, 61%);
+
+  --color-selection-foreground: hsl(0, 0%, 100%);
+  --color-selection-background: hsl(11, 78%, 53%);
+
+  --color-page-content: hsl(0, 0%, 10%);
+  --color-page-background: hsl(0, 0%, 98%);
+  --color-page-overscroll: hsl(0, 0%, 98%);
+}
