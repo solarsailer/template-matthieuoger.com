@@ -355,34 +355,34 @@ figcaption {
 
 /* Code. */
 
-/* .gatsby-highlight {
+pre {
   position: relative;
+}
 
-  @media (max-width: ${BREAKPOINT_MOBILE}px) {
+@media (max-width: 700px) {
+  pre {
     margin-left: -2rem;
     margin-right: -2rem;
   }
-
-  &::before {
-    content: 'Code';
-    ${HINT};
-  }
 }
 
-.gatsby-highlight pre {
+pre::before {
+  content: 'Code';
+}
+
+pre code {
   margin: 0;
   margin-bottom: 2rem;
   padding: 1.5rem 2.5rem;
   border-radius: 5px;
+  white-space: pre-wrap;
+}
 
-  code {
-    white-space: pre-wrap;
-  }
-
-  @media (max-width: ${BREAKPOINT_MOBILE}px) {
+@media (max-width: 700px) {
+  pre code {
     border-radius: 0;
   }
-} */
+}
 
 code {
   font-size: 0.75em;
@@ -593,9 +593,9 @@ a.footnote-ref:hover {
 
 /* Hint. */
 
+pre::before,
 blockquote::before,
 .footnotes::before,
-.gatsby-highlight::before,
 .hint {
   position: absolute;
   top: -20px;
