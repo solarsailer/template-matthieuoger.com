@@ -1,0 +1,17 @@
+{
+  "name": "template-matthieuoger.com",
+  "version": "1.0.0",
+  "description": "iA Writer Template for matthieuoger.com.",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": "https://github.com/solarsailer/template-matthieuoger.com",
+  "author": {
+    "name": "Matthieu Oger",
+    "url": "https://matthieuoger.com/"
+  },
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
