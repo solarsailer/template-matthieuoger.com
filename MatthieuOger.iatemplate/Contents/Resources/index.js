@@ -81,14 +81,26 @@
 
   // Find metadata in a potential front matter.
   function extractMetadata(frontMatter) {
-    return getNodes(frontMatter).reduce((acc, x) => {
-      if (x.nodeType === Node.ELEMENT_NODE) {
-        const [key, value] = x.textContent.split(':')
+    // A tag can contain multiple metadata (if there's no newline between them).
+    // So, first, we split each node's content into multiple lines.
+    const items = getNodes(frontMatter).reduce((acc, x) => {
+      if (x.nodeType === Node.ELEMENT_NODE && x.textContent.trim() !== '') {
+        const lines = x.textContent.split('\n')
 
-        if (key && value) {
-          // Trim and remove first and last quotation marks from the value.
-          acc[key.trim().toLowerCase()] = value.trim().replace(/^"|"$/g, '')
-        }
+        acc = [...acc, ...lines]
+      }
+
+      return acc
+    }, [])
+
+    // Then, for each line, we extract the actual metadata.
+    // It won't work for nested yaml data however.
+    return items.reduce((acc, x) => {
+      const [key, value] = x.split(':')
+
+      if (key && value) {
+        // Trim and remove first and last quotation marks from the value.
+        acc[key.trim().toLowerCase()] = value.trim().replace(/^"|"$/g, '')
       }
 
       return acc
