@@ -29,16 +29,30 @@
 
   // Get a potential candidate for a front matter.
   function getFrontMatter(md) {
-    // This is dirty, but we have no other way to detect the end of a front matter.
-    // I always use '---' to close the front matter block,
-    // and this is translated by iA Writer as an <h2> tag.
-    const FRONT_MATTER_END = '</h2>'
-    const end = md.indexOf(FRONT_MATTER_END) + FRONT_MATTER_END.length
+    const end = findFrontMatterEnd(md)
 
     const frontMatter = md.substring(0, end).trim()
     const rest = md.substring(end).trim()
 
     return {frontMatter, rest}
+  }
+
+  function findFrontMatterEnd(md) {
+    // This is dirty, but we have no other way to detect the end of a front matter.
+    // I always use '---' to close the front matter block,
+    //
+    // And this is translated by iA Writer as a `---</p>` or `<h2>` tag in most cases.
+    const END_PARA = '---</p>'
+    const END_H2 = '</h2>'
+
+    // First and rarest case: we find a ---</p>.
+    const endWithPara = md.indexOf(END_PARA)
+    if (endWithPara !== -1) {
+      return endWithPara + END_PARA.length
+    }
+
+    // Otherwise, it's probably an </h2>.
+    return md.indexOf(END_H2) + END_H2.length
   }
 
   // Remove a front matter.
