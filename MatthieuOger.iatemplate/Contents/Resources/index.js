@@ -65,8 +65,11 @@
 
           // Other nodes:
           // We get the text, split it to see if there's a key/value pair.
+          //
+          // If the yaml has an higher depth, we don't care.
+          // As long as we find one key/value, it's enough for us.
           const subtexts = x.textContent.split(':')
-          if (subtexts.length === 2) return true
+          if (subtexts.length >= 2) return true
         }
 
         return false
