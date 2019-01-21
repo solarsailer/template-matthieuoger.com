@@ -2,6 +2,8 @@
 ;(function() {
   window.addEventListener('load', () => {
     const container = document.querySelector('[data-document]')
+    process(container)
+
     container.addEventListener('ia-writer-change', () => {
       process(container)
     })
