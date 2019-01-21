@@ -10,7 +10,9 @@
     "url": "https://matthieuoger.com/"
   },
   "scripts": {
-    "start": ""
+    "start": "sass --watch src/main.scss MatthieuOger.iatemplate/Contents/Resources/bundle.css",
+    "build": "sass --style=compressed src/main.scss MatthieuOger.iatemplate/Contents/Resources/bundle.css",
+    "export": "yarn build && open MatthieuOger.iatemplate"
   },
   "dependencies": {},
   "devDependencies": {

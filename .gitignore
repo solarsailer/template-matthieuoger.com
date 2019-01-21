@@ -26,4 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 node_modules/
 bower_components/
-  
+
+# Bundles.
+bundle.css
+bundle.css.map
