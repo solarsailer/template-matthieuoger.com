@@ -21,8 +21,8 @@
     const metadata = extractMetadata(frontMatter)
     bindMetadata(metadata)
 
-    cleanElementIfNeeded('.post-header')
-    cleanElementIfNeeded('.post-footer')
+    changeVisibility('.post-header')
+    changeVisibility('.post-footer')
   }
 
   // Get a potential candidate for a front matter.
@@ -99,12 +99,13 @@
   }
 
   // Remove a node if it's empty.
-  function cleanElementIfNeeded(cssSelector) {
+  function changeVisibility(cssSelector) {
     document.querySelectorAll(cssSelector).forEach(x => {
-      if (x.nodeType !== Node.ELEMENT_NODE) return
-      if (x.textContent.trim() !== '') return
-
-      x.remove()
+      if (x.nodeType === Node.ELEMENT_NODE && x.textContent.trim() === '') {
+        x.style.display = 'none'
+      } else {
+        x.style.display = null
+      }
     })
   }
 
