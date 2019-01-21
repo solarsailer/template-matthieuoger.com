@@ -13,5 +13,7 @@
     "start": ""
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "sass": "^1.16.1"
+  }
 }
