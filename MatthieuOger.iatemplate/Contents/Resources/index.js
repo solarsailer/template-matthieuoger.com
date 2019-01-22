@@ -25,6 +25,8 @@
 
     changeVisibility('.post-header')
     changeVisibility('.post-footer')
+
+    addDomainToMedias()
   }
 
   // Get a potential candidate for a front matter.
@@ -146,6 +148,16 @@
     el.innerHTML = text.trim()
 
     return Array.from(el.childNodes)
+  }
+
+  // Find relative URLs in images/videos and add the root domain.
+  function addDomainToMedias() {
+    document.querySelectorAll('img, video').forEach(x => {
+      const url = x.getAttribute('src')
+      if (url && url.startsWith('/')) {
+        x.setAttribute('src', 'https://matthieuoger.com' + url)
+      }
+    })
   }
 
   function identity(x) {
