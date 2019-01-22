@@ -6,3 +6,7 @@ Resources:
 
 - https://ia.net/writer/templates
 - https://github.com/iainc/iA-Writer-Templates
+
+# Font
+
+This template uses [Rubik](https://fonts.google.com/specimen/Rubik/). Install it locally.
