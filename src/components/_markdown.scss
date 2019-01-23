@@ -379,7 +379,8 @@
 
   /* Footnotes */
 
-  a.footnote-ref {
+  // In iA Writer, it's a .footnote and not a .footnote-ref.
+  a.footnote {
     box-sizing: content-box;
     color: white;
     margin-left: 2px;
@@ -448,7 +449,8 @@
         border: none;
       }
 
-      .footnote-backref {
+      // In iA Writer, it's a .reversefootnote instead of .footnote-backref.
+      .reversefootnote {
         position: absolute;
         top: 0;
         right: -11px;
