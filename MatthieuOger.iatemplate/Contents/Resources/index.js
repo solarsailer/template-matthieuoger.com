@@ -27,6 +27,7 @@
     changeVisibility('.post-footer')
 
     addDomainToMedias()
+    wrapCodeBlocks()
   }
 
   // Get a potential candidate for a front matter.
@@ -157,6 +158,27 @@
       if (url && url.startsWith('/')) {
         x.setAttribute('src', 'https://matthieuoger.com' + url)
       }
+    })
+  }
+
+  // Wrap pre>code element with a div to fix styles.
+  function wrapCodeBlocks() {
+    document.querySelectorAll('pre > code').forEach(codeNode => {
+      const wrapper = document.createElement('div')
+      wrapper.setAttribute('class', 'gatsby-highlight')
+
+      const language = 'language-' + codeNode.getAttribute('class')
+
+      // Move up two levels (first, go to pre, then go the actual parent)
+      const preNode = codeNode.parentNode
+      preNode.setAttribute('class', language)
+
+      // Get actual container.
+      const container = preNode.parentNode
+
+      // Insert at the right position (which is why we need to do it in 2 steps).
+      container.insertBefore(wrapper, preNode)
+      wrapper.appendChild(preNode)
     })
   }
 

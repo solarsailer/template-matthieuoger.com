@@ -259,6 +259,13 @@
     }
   }
 
+  // Fix for iA Writer (the background and color comes from the prismjs theme
+  // which is not in the iA Writer preview).
+  .gatsby-highlight pre {
+    color: white;
+    background: hsl(0, 0%, 18%);
+  }
+
   code {
     font-size: 0.75em;
   }
