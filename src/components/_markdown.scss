@@ -322,7 +322,9 @@
 
   .twitter-tweet {
     background: hsl(var(--hue-twitter), 93%, 95%);
-    border: 1px solid hsl(var(--hue-twitter), 91%, 91%);
+
+    // Cannot use var(--hue-twitter) in iA Writer. Don't know why.
+    border: 1px solid hsl(210, 91%, 91%);
 
     &::before {
       content: 'Tweet';
@@ -333,7 +335,9 @@
 
   .tldr {
     background: hsl(var(--hue-tldr), 80%, 94%);
-    border: 1px solid hsl(var(--hue-tldr), 80%, 90%);
+
+    // Cannot use var(--hue-tldr) in iA Writer. Don't know why.
+    border: 1px solid hsl(21, 80%, 90%);
 
     &::before {
       content: 'tl;dr';
